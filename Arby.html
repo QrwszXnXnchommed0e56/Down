@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil - Byexe Official</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  h1 {
+    text-align: center;
+    color: #38bdf8;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 25px;
+    font-size: 14px;
+  }
+  h2 {
+    color: #38bdf8;
+    font-size: 16px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 6px;
+    margin: 22px 0 12px;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #334155;
+    font-size: 14px;
+  }
+  .label { color: #94a3b8; flex-shrink: 0; }
+  .value { color: #f1f5f9; text-align: right; word-break: break-all; }
+  a { color: #38bdf8; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .map-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    flex: 1;
+    min-width: 140px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+  }
+  .btn-copy { background: #38bdf8; color: #0f172a; }
+  .btn-copy:hover { background: #0ea5e9; }
+  .btn-open { background: #22c55e; color: #0f172a; text-decoration: none; }
+  .btn-open:hover { background: #16a34a; }
+  .btn-copy.copied { background: #22c55e; }
+
+  .footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 12px;
+    color: #64748b;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Arbyla Ahmad</h1>
+    <p class="subtitle">Byexe Official</p>
+
+    <h2>Kontak</h2>
+    <div class="row"><span class="label">Phone 1</span><span class="value">085691909415</span></div>
+    <div class="row"><span class="label">Phone 2</span><span class="value">08871459454</span></div>
+    <div class="row"><span class="label">Telegram</span><span class="value"><a href="https://t.me/by_exe9" target="_blank">t.me/by_exe9</a></span></div>
+    <div class="row"><span class="label">Gmail 1</span><span class="value">sadxign@gmail.com</span></div>
+    <div class="row"><span class="label">Gmail 2</span><span class="value">chatgptxone@gmail.com</span></div>
+
+    <h2>Akun Digital</h2>
+    <div class="row"><span class="label">DANA</span><span class="value">ABDXXXX</span></div>
+    <div class="row"><span class="label">ShopeePay</span><span class="value">ARBILAAHMAD</span></div>
+    <div class="row"><span class="label">Kartu</span><span class="value">Indosat Ooredoo Hutchison</span></div>
+    <div class="row"><span class="label">QRIS Type</span><span class="value">ID.DANA.WWW</span></div>
+    <div class="row"><span class="label">ID-QR</span><span class="value">ID.CO.QRIS.WWW0215ID10254530070450303UMI5204737253033605802ID5920BYEXE</span></div>
+
+    <h2>Perangkat</h2>
+    <div class="row"><span class="label">Merek HP</span><span class="value">Redmi 9A</span></div>
+
+    <h2>Lokasi</h2>
+    <div class="row"><span class="label">Kota</span><span class="value">Jakarta Selatan</span></div>
+    <div class="row"><span class="label">Kelurahan</span><span class="value">Pondok Labu</span></div>
+    <div class="row"><span class="label">Kecamatan</span><span class="value">Cilandak</span></div>
+    <div class="row"><span class="label">Kode Pos</span><span class="value">12450</span></div>
+    <div class="row"><span class="label">Alamat</span><span class="value">12450, Cilandak, Jakarta Selatan, DKI Jakarta, Indonesia</span></div>
+    <div class="row"><span class="label">Latitude</span><span class="value">-6.3100502</span></div>
+    <div class="row"><span class="label">Longitude</span><span class="value">106.7985347</span></div>
+
+    <div class="map-box">
+      <button class="btn btn-copy" id="btnCopy" onclick="salinMaps()">Salin Maps</button>
+      <a class="btn btn-open" href="https://www.google.com/maps/search/?api=1&amp;query=-6.3100502,106.7985347" target="_blank">Buka Lokasi</a>
+    </div>
+
+    <h2>Pendidikan</h2>
+    <div class="row"><span class="label">Alumni</span><span class="value">SMPN 37 Jakarta</span></div>
+
+    <p class="footer">&copy; 2025 Byexe Official</p>
+  </div>
+
+<script>
+var MAPS_LINK = "https://www.google.com/maps/search/?api=1&query=-6.3100502,106.7985347";
+
+function salinMaps() {
+  var btn = document.getElementById("btnCopy");
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(MAPS_LINK).then(function() {
+      tampilSukses(btn);
+    })["catch"](function() {
+      fallbackCopy(btn);
+    });
+  } else {
+    fallbackCopy(btn);
+  }
+}
+
+function fallbackCopy(btn) {
+  var ta = document.createElement("textarea");
+  ta.value = MAPS_LINK;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  var sukses = false;
+  try {
+    sukses = document.execCommand("copy");
+  } catch (e) {
+    sukses = false;
+  }
+  document.body.removeChild(ta);
+  if (sukses) {
+    tampilSukses(btn);
+  } else {
+    alert("Gagal menyalin. Salin manual: " + MAPS_LINK);
+  }
+}
+
+function tampilSukses(btn) {
+  var original = btn.innerHTML;
+  btn.innerHTML = "Tersalin!";
+  btn.classList.add("copied");
+  setTimeout(function() {
+    btn.innerHTML = original;
+    btn.classList.remove("copied");
+  }, 1800);
+}
+</script>
+</body>
+</html>
